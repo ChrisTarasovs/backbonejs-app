@@ -1,0 +1,30 @@
+{
+  "name": "backbonejs-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "backbone-min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisTarasovs/backbonejs-app.git"
+  },
+  "keywords": [
+    "ilma"
+  ],
+  "author": "Chris Tarasovs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisTarasovs/backbonejs-app/issues"
+  },
+  "homepage": "https://github.com/ChrisTarasovs/backbonejs-app#readme",
+   "dependencies": {
+    "backbone": "^1.1.2",
+    "backbone.localstorage": "^1.1.16",
+    "jquery": "^2.1.3",
+    "todomvc-app-css": "^2.0.0",
+    "todomvc-common": "^1.0.1",
+    "underscore": "^1.7.0"
+  }
+}

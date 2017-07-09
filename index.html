@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="node_modules/todomvc-common/base.css">
+		<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
+	</head>
+	<body>
+
+
+	<div class="todoapp">
+		<input class="add-item" placeholder="add something"  autofocus/>
+		<ul class="todo-list"></ul>
+		<section class="footer"></section>
+	</div>
+
+	<script type="text/template" id="stats">
+		<span class="todo-count"><%= remaining %> </span>
+		<% if (completed) { %>
+		<button class="clear-completed">Clear completed</button>
+		<% } %>
+	</script>
+	<script type="text/template" id="item-template">
+		<div class="view">
+			<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+			<label><%- title %></label>
+			<button class="destroy"></button>
+		</div>
+		<input class="edit" value="<%- title %>">
+	</script>
+
+	<script src="node_modules/todomvc-common/base.js"></script>
+	<script src="node_modules/jquery/dist/jquery.js"></script>
+	<script src="node_modules/underscore/underscore.js"></script>
+	<script src="node_modules/backbone/backbone.js"></script>
+	<script src="node_modules/backbone.localstorage/backbone.localStorage.js"></script>
+	<script>
+// global Backbone, jQuery, _, ENTER_KEY 
+// var app = app || {};
+
+		// (function ($) {
+		// 	'use strict';
+		// 	// Our overall **AppView** is the top-level piece of UI.
+		// 	app.AppView = Backbone.View.extend({
+		// 		el: '.todoapp',
+		// 		initialize: function () {
+		// 			this.$input = this.$('.add-item');
+		// 			this.listenTo(app.todos, 'add', this.addOne);
+		// 			//app.todos.fetch({reset: true});
+		// 		}
+
+
+		// 	});
+		// })(jQuery);
+
+
+// (function ($) {
+// 		// Our basic **Todo** model has `title`, `order`, and `completed` attributes.
+// 		app.Todo = Backbone.Model.extend({
+// 			// Default attributes for the todo
+// 			// and ensure that each todo created has `title` and `completed` keys.
+// 			defaults: {
+// 				title: '',
+// 				completed: false
+// 			},
+
+// 			// Toggle the `completed` state of this todo item.
+// 			toggle: function () {
+// 				this.save({
+// 					completed: !this.get('completed')
+// 				});
+// 			}
+// 		});
+
+		
+// 		app.TodoView = Backbone.View.extend({
+// 			el: '.todoapp',
+// 			events: {
+// 				'keypress .add-item': 'createItem',
+// 				'click .new-todo': 'createItem',
+// 				'click .clear-completed': 'removeItem'
+// 			// 	'keypress ': 'createOnEnter',
+// 			// 	'click .clear-completed': 'clearCompleted',
+// 			// 	'click .toggle-all': 'toggleAllComplete'
+// 			},
+// 			initialize: function () {
+// 				this.$list = $('.todo-list');
+// 			},
+// 			createItem: function(e){
+// 				console.log(ENTER_KEY)
+// 				if (e.which === ENTER_KEY ) {
+// 					console.log('todo', todo)
+// 					// var view = new app.TodoView({ model: todo });	
+// 					// this.$list.append(view.render().el);
+// 					alert('addd')
+// 				}
+// 			},
+// 			removeItem: function(e){
+// 				alert('clear-completed')
+// 			},
+// 			render: function () {
+// 				this.$list.html(this.model.get("title") + "<button class='new-todo'> Add</button><button class='clear-completed'> clear completed</button>" );
+// 				return this;
+// 			}
+// 		});
+		
+// 		var todo = new app.Todo({title: 'Go shopping'});
+// 		var todoView = new app.TodoView({ el : '.todoapp', model: todo});
+// 		todoView.render();
+// 	})(jQuery);
+	</script>
+	<script src="js/models/todo.js"></script>
+	<script src="js/collections/todos.js"></script>
+	<script src="js/todo-view.js"></script>
+	<script src="js/app-view.js"></script>
+	<script src="js/app.js"></script>
+	</body>
+</html>
